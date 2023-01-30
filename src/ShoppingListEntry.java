@@ -53,12 +53,20 @@ public class ShoppingListEntry {
 
     public String print() {
         return unit == null ?
-                amount + " " + name + ", in " + category.name().toLowerCase() + ".\n" :
-                amount + " " + unit.name() + " " + name + ", in " + category.name().toLowerCase() + ".\n";
+                amount + " " + name + " (" + category.name().toLowerCase() + ")\n" :
+                amount + " " + unit.name() + " " + name + " (" + category.name().toLowerCase() + ")\n";
     }
 
     public void buy() throws RuntimeException {
         if (isBought()) throw new RuntimeException("Article has already been bought!");
         else bought = true;
+    }
+
+    public static ShoppingListEntry of(int amount, Unit unit, String name, FoodType category) {
+        return new ShoppingListEntry(amount, unit, name, category);
+    }
+
+    public static ShoppingListEntry of(int amount, String name, FoodType category) {
+        return new ShoppingListEntry(amount, name, category);
     }
 }

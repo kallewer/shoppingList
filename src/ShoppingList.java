@@ -39,13 +39,17 @@ public class ShoppingList {
                 .findFirst().orElseThrow(RuntimeException::new);
     }
 
-    public void printOnly(Predicate<ShoppingListEntry> predicate) {
+    public String printOnly(Predicate<ShoppingListEntry> predicate) {
+        StringBuilder sb = new StringBuilder();
         shoppingList.stream()
                 .filter(predicate)
-                .forEach(ShoppingListEntry::print);
+                .forEach(e -> sb.append(e.print()));
+        return sb.toString();
     }
 
-    public void print() {
-        shoppingList.forEach(ShoppingListEntry::print);
+    public String print() {
+        StringBuilder sb = new StringBuilder();
+        shoppingList.forEach(e -> sb.append(e.print()));
+        return sb.toString();
     }
 }
