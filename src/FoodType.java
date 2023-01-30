@@ -6,6 +6,7 @@ public enum FoodType {
     FISH,
     PANTRY,
     SPICES,
+    OILS,
     BREAD,
     FROZEN,
     BEVERAGES,
