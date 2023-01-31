@@ -20,6 +20,8 @@ public class Main {
                 ShoppingListEntry.of(240, Unit.ml, "Weißer Balsamico", FoodType.OILS),
                 ShoppingListEntry.of(200, Unit.g, "Silberzwiebeln", FoodType.VEGETABLES)
         );
+        list.buyAllExcept("Senfblaetter");
+
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("shoppingList.txt"));
             writer.write(list.print());
@@ -28,5 +30,6 @@ public class Main {
         } catch (Exception e) {
             e.getStackTrace();
         }
+
     }
 }

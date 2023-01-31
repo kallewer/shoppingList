@@ -9,4 +9,9 @@ Hello,
 
 3. List will be printed in a text file in ShoppingList folder.
 
-4. The functionality to remove bought articles (optionally by unit) and update list will be added soon!
+4. You can "buy" items, using buy(), buyAll(), or buyAllExcept()
+- buy accepts a list of String names to be removed
+- buyAll buys all
+- buyAllExcept buys all except String names in param list
+- each method removes bought items from list and returns true if each removal worked correctly, i.e. size
+  of list decremented as expected
